@@ -6,6 +6,27 @@
     padding: 40px 25px;
 }
 
-.searchForm {
-    margin-top: 100px;
+
+
+.allRecipies {
+    display: grid;
+    margin-top: 25px;
+    grid-template-columns: 230px 230px;
+
+}
+
+.recipiesImg {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.recipiesTitle {
+    max-width: 200px;
+    text-align: center;
+}
+
+.uri {
+    margin-top: 50px;
 }
