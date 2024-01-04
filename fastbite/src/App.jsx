@@ -1,13 +1,15 @@
+import './styles/App.scss';
+
 import { useState } from 'react';
-import './App.css';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+
 import { appId, appKey } from './api/key';
+import { getRecipes } from './api/api';
+
+import Home from './components/home/Home';
 import AllRecipes from './components/recipes/AllRecipes';
 import Search from './components/search/Search';
-import { getRecipes } from './api/api';
-import { Routes, Route, useNavigate } from 'react-router-dom';
 import Details from './components/details/Details';
-import Home from './components/home/Home';
-
 
 function App() {
 
