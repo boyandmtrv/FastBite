@@ -17,15 +17,15 @@ function App() {
     const navigate = useNavigate();
 
 
-    const onSubmit = (e) => {
-        e.preventDefault();
+    const onSubmit = async (query, maxTime) => {
         try {
-            getRecipes(query, appId, appKey, setRecipes);
+            await getRecipes(query, appId, appKey, setRecipes, parseInt(maxTime));
             navigate('/allRecipes');
         } catch (error) {
             console.error('Error fetching recipes:', error);
         }
     };
+    
 
     return (
         <div className='App'>
