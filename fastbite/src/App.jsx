@@ -10,6 +10,7 @@ import Home from './components/home/Home';
 import AllRecipes from './components/recipes/AllRecipes';
 import Search from './components/search/Search';
 import Details from './components/details/Details';
+// import NoTimeSearch from './components/search/NoTimeSearch';
 
 function App() {
 
@@ -27,7 +28,7 @@ function App() {
             console.error('Error fetching recipes:', error);
         }
     };
-    
+
 
     return (
         <div className='App'>
