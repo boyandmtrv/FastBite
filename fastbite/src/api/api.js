@@ -6,13 +6,25 @@ export const getRecipes = async (query, appId, appKey, setRecipes, maxTotalTime)
     try {
         const result = await Axios.get(url);
 
-        const filteredRecipes = result.data.hits.filter(recipe => {
-            const totalTime = recipe.recipe.totalTime || 0; 
-            console.log(`Recipe time ${totalTime}`);
-            console.log(`Recipe name ${recipe.recipe.label}`);
-            console.log(`Max: ${maxTotalTime}`);
-            return totalTime > 0 && totalTime <= maxTotalTime;
-        });
+        let filteredRecipes = result.data.hits;
+        
+        if (maxTotalTime) {
+            filteredRecipes = result.data.hits.filter(recipe => {
+                const totalTime = recipe.recipe.totalTime || 0;
+                console.log(`Recipe time ${totalTime}`);
+                console.log(`Recipe name ${recipe.recipe.label}`);
+                console.log(`Max: ${maxTotalTime}`);
+                return totalTime > 0 && totalTime <= maxTotalTime;
+            });
+        }
+
+        // const filteredRecipes = result.data.hits.filter(recipe => {
+        //     const totalTime = recipe.recipe.totalTime || 0; 
+        //     console.log(`Recipe time ${totalTime}`);
+        //     console.log(`Recipe name ${recipe.recipe.label}`);
+        //     console.log(`Max: ${maxTotalTime}`);
+        //     return totalTime > 0 && totalTime <= maxTotalTime;
+        // });
         console.log(filteredRecipes);
 
         setRecipes(filteredRecipes);
