@@ -1,4 +1,4 @@
-import './styles/App.scss';
+import './styles/App.css';
 
 import { useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
@@ -13,6 +13,7 @@ import Details from './components/details/Details';
 import Loading from './components/loading/Loading';
 import CuisineSearch from './components/search/CuisineSearch';
 import Search from './components/search/Search';
+import Header from './components/header/Header';
 
 function App() {
     const [query, setQuery] = useState('');
@@ -48,8 +49,9 @@ function App() {
 
 
     return (
-        <div className='App'>
-            <Search
+        <div className='App bg-gray-300 w-full h-screen'>
+            <Header />
+            {/* <Search
                 query={query}
                 setQuery={setQuery}
                 onSubmit={onSubmit}
@@ -65,7 +67,7 @@ function App() {
                 cuisineType={cuisineType}
                 setCuisineType={setCuisineType}
                 onSubmit={onCuisineSearch}
-            />
+            /> */}
             
             {loading ? (
                 <Loading />
