@@ -1,17 +1,16 @@
 import { useState } from "react";
 
-const Search = ({
+const TimeSearch = ({
     query,
     setQuery,
     onSubmit
 }) => {
 
-    const [maxTime, setMaxTime] = useState('');
 
     const handleSearch = (e) => {
         e.preventDefault();
         
-        onSubmit(query, maxTime);
+        onSubmit(query);
     };
 
     return (
@@ -23,12 +22,6 @@ const Search = ({
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                 />
-                 <input
-                    type="number"
-                    placeholder='Time you have'
-                    value={maxTime}
-                    onChange={(e) => setMaxTime(e.target.value)}
-                />
                 <input
                     type="submit"
                     value="Search"
@@ -39,4 +32,4 @@ const Search = ({
     )
 };
 
-export default Search;
+export default TimeSearch;
