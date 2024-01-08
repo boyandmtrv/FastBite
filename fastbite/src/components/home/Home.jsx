@@ -20,31 +20,31 @@ const Home = () => {
     }, [timer]);
 
     return (
-        <div className={`homeContainer`}>
+        <div className={`flex items-center justify-center h-full`}>
             <div className={`pacmanContainer ${isVisible ? 'fade-out' : ''}`}>
                 {isVisible && (
-                    <div className="pacmanTotal">
-                        <div className="pacman"></div>
-                        <div className="dot"></div>
-                        <div className="path">
+                    <div className="pacmanTotal flex items-center overflow-hidden h-[50vh] w-full">
+                        <div className="pacman relative bg-transparent w-[300px]"></div>
+                        <div className="dot border-[10px] border-white rounded-[50%] mt-[-150px] ml-[150px]"></div>
+                        <div className="path flex justify-around w-full pl-[10px] text-[80px]">
                             <GiHamburger />
                         </div>
-                        <div className="path">
+                        <div className="path flex justify-around w-full pl-[10px] text-[80px]">
                             <GiFriedEggs />
                         </div>
-                        <div className="path">
+                        <div className="path flex justify-around w-full pl-[10px] text-[80px]">
                             <GiMeat />
                         </div>
-                        <div className="path">
+                        <div className="path flex justify-around w-full pl-[10px] text-[80px]">
                             <GiHamburger />
                         </div>
-                        <div className="path">
+                        <div className="path flex justify-around w-full pl-[10px] text-[80px]">
                             <GiFriedEggs />
                         </div>
-                        <div className="path">
+                        <div className="path flex justify-around w-full pl-[10px] text-[80px]">
                             <GiMeat />
                         </div>
-                        <div className="path">
+                        <div className="path flex justify-around w-full pl-[10px] text-[80px]">
                             <GiHamburger />
                         </div>
                     </div>
