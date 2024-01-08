@@ -51,28 +51,41 @@ function App() {
     return (
         <div className='App bg-gray-300 w-full h-screen'>
             <Header />
-            {/* <Search
+            {/* <TimeSearch
                 query={query}
                 setQuery={setQuery}
                 onSubmit={onSubmit}
-            />
-            <TimeSearch
-                query={query}
-                setQuery={setQuery}
-                onSubmit={onSubmit}
-            />
-            <CuisineSearch
-                query={query}
-                setQuery={setQuery}
-                cuisineType={cuisineType}
-                setCuisineType={setCuisineType}
-                onSubmit={onCuisineSearch}
             /> */}
-            
+
             {loading ? (
                 <Loading />
             ) : (
                 <Routes>
+                    <Route path='/search'
+                        element={<Search
+                            query={query}
+                            setQuery={setQuery}
+                            onSubmit={onSubmit}
+                        />}
+                    />
+                    <Route path='/cuisineSearch'
+                        element={
+                            <CuisineSearch
+                                query={query}
+                                setQuery={setQuery}
+                                cuisineType={cuisineType}
+                                setCuisineType={setCuisineType}
+                                onSubmit={onCuisineSearch}
+                            />}
+                    />
+                    <Route path='/timeSearch'
+                        element={
+                            <TimeSearch
+                                query={query}
+                                setQuery={setQuery}
+                                onSubmit={onSubmit}
+                            />}
+                    />
                     <Route path='/' element={<Home />} />
                     <Route path='/allRecipes' element={<AllRecipes recipes={recipes} />} />
                     <Route path='/details/:recipeId' element={<Details recipes={recipes} />} />
