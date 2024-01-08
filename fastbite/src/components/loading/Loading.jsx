@@ -2,7 +2,7 @@ import React from 'react';
 
 const Loading = () => {
     return (
-        <div style={{ textAlign: 'center', paddingTop: '20px' }}>
+        <div className='mt-[20%]' style={{ textAlign: 'center', paddingTop: '20px' }}>
             Loading...
         </div>
     );
