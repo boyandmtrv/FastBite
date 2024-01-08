@@ -15,7 +15,7 @@ const TimeSearch = ({
     };
 
     return (
-        <div className="search">
+        <div className="search bg-white w-full mt-[10%]">
             <form className="searchForm" onSubmit={handleSearch}>
                 <input
                     type="text"
