@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: red;
     height: 100vh;
 }
 
@@ -19,6 +18,7 @@
     justify-content: space-around;
     width: 100%;
     animation: eating-path 5s linear infinite;
+    padding-left: 10px;
 }
 
 .path::before {
@@ -28,27 +28,40 @@
     height: 1rem;
 }
 
+.path>svg {
+    font-size: 30px;
+}
+
 @keyframes eating-path {
     0% {
         transform: translateX(100%);
     }
 
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-180%);
     }
 }
 
 .pacman {
     position: relative;
     background: transparent;
+    width: 300px;
     z-index: 1;
+}
+
+.dot {
+    border: 10px solid #fff;
+    border-radius: 50%;
+    z-index: 1;
+    margin-top: -100px;
+    margin-left: 50px;
 }
 
 .pacman::before,
 .pacman::after {
     content: '';
     position: absolute;
-    top: -35px;
+    top: -100px;
     display: block;
     border-radius: 50%;
     height: 0px;
@@ -57,7 +70,7 @@
 
 .pacman::before {
     animation: chunk-top .7s ease infinite;
-    border: 35px solid yellow;
+    border: 90px solid yellow;
     border-left-color: transparent;
     border-bottom-color: transparent;
 }
@@ -76,7 +89,7 @@
 
 .pacman::after {
     animation: chunk-bottom .7s ease infinite;
-    border: 35px solid yellow;
+    border: 90px solid yellow;
     border-right-color: transparent;
     border-top-color: transparent;
 }
@@ -94,7 +107,11 @@
 }
 
 .fade-in {
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeIn 1s ease-in;
+}
+
+.fade-out {
+    animation: fadeOut 4.5s ease-out;
 }
 
 
@@ -106,5 +123,15 @@
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
     }
 }
