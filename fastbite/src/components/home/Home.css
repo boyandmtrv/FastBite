@@ -72,14 +72,14 @@
 
     .pacman::before {
         animation: chunk-top .5s ease infinite;
-        border: 100px solid #f0dc14;
+        border: 100px solid #545454;
         border-left-color: transparent;
         border-bottom-color: transparent;
     }
 
     .pacman::after {
         animation: chunk-bottom .5s ease infinite;
-        border: 100px solid #f0dc14;
+        border: 100px solid #545454;
         border-right-color: transparent;
         border-top-color: transparent;
     }
