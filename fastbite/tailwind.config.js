@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    backgroundImage: theme => ({
+      'pacBg': "url(../img/pacbg.png)",
+    }),
+    fontFamily: {
+      'cursive': ['Merienda', 'cursive']
+    }
   },
   plugins: [],
 }
