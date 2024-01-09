@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+
+.homeContainer {
+    background: url('../../img/pacbg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
+}
+
 .path {
     animation: eating-path 1s ease infinite;
 }
@@ -40,14 +50,14 @@
 
 .pacman::before {
     animation: chunk-top .5s ease infinite;
-    border: 190px solid #f0dc14;
+    border: 190px solid #545454;
     border-left-color: transparent;
     border-bottom-color: transparent;
 }
 
 .pacman::after {
     animation: chunk-bottom .5s ease infinite;
-    border: 190px solid #f0dc14;
+    border: 190px solid #545454;
     border-right-color: transparent;
     border-top-color: transparent;
 }
@@ -128,4 +138,33 @@
     to {
         opacity: 0;
     }
+}
+
+.pacmanIcon::before,
+.pacmanIcon::after {
+    content: '';
+    position: absolute;
+    top: -200px;
+    display: block;
+    border-radius: 50%;
+    height: 0px;
+    width: 0px;
+}
+
+.pacmanIcon::before {
+    animation: chunk-top .5s ease infinite;
+    border: 50px solid red;
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+
+.pacmanIcon::after {
+    animation: chunk-bottom .5s ease infinite;
+    border: 50px solid red;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+
+h1 {
+    font-family: 'Merienda', cursive;
 }
