@@ -1,6 +1,4 @@
-import { useState } from "react";
-
-const TimeSearch = ({
+const Search = ({
     query,
     setQuery,
     onSubmit
@@ -9,12 +7,12 @@ const TimeSearch = ({
 
     const handleSearch = (e) => {
         e.preventDefault();
-        
         onSubmit(query);
+        setQuery('');
     };
 
     return (
-        <div className="search">
+        <div className="search mt-[20%]">
             <form className="searchForm" onSubmit={handleSearch}>
                 <input
                     type="text"
@@ -32,4 +30,4 @@ const TimeSearch = ({
     )
 };
 
-export default TimeSearch;
+export default Search;
