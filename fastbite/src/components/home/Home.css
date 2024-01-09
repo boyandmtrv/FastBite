@@ -1,5 +1,5 @@
 .path {
-    animation: eating-path 5s linear infinite;
+    animation: eating-path 1s ease infinite;
 }
 
 .path::before {
@@ -35,22 +35,44 @@
     display: block;
     border-radius: 50%;
     height: 0px;
-    width: 0px;    
+    width: 0px;
 }
 
 .pacman::before {
-    animation: chunk-top .7s ease infinite;
+    animation: chunk-top .5s ease infinite;
     border: 190px solid #f0dc14;
     border-left-color: transparent;
     border-bottom-color: transparent;
-
 }
 
 .pacman::after {
-    animation: chunk-bottom .7s ease infinite;
+    animation: chunk-bottom .5s ease infinite;
     border: 190px solid #f0dc14;
     border-right-color: transparent;
     border-top-color: transparent;
+}
+
+@media (min-width:320px) and (max-width:754px) {
+
+
+    .pacman::before,
+    .pacman::after {
+        top: -100px;
+    }
+
+    .pacman::before {
+        animation: chunk-top .5s ease infinite;
+        border: 100px solid #f0dc14;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+    }
+
+    .pacman::after {
+        animation: chunk-bottom .5s ease infinite;
+        border: 100px solid #f0dc14;
+        border-right-color: transparent;
+        border-top-color: transparent;
+    }
 }
 
 @keyframes chunk-top {
@@ -83,10 +105,9 @@
 }
 
 .fade-out {
-    animation: fadeOut 4.5s ease-out;
+    animation: fadeOut 4s ease-out;
     animation-delay: .5s;
 }
-
 
 
 @keyframes fadeIn {

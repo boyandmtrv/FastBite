@@ -25,37 +25,38 @@ const Home = () => {
 
     return (
         <div className={`flex items-center justify-center h-full bg-[#140014]`}>
-            <div className={`pacmanContainer ${isVisible ? 'fade-out' : ''}`}>
+            <div className={`pacmanContainer w-full flex flex-col items-center ${isVisible ? 'fade-out' : ''}`}>
                 {isVisible && (
-                    <div className="pacmanTotal flex items-center overflow-hidden h-[50vh] w-full">
-                        <div className="pacman relative bg-transparent w-[300px]"></div>
-                        <div className="dot border-[10px] border-black rounded-[50%] mt-[-150px] ml-[150px]"></div>
-                        <div className="path flex justify-around w-full pl-[10px] text-[80px] text-[#1414f0]">
+                    <div className="pacmanTotal flex items-center overflow-hidden lg:h-[50vh] lg:w-[50%] md:h-[50vh] md:w-[50%] sm:h-[50vh] w-full min-[320px]:h-[50vh] min-[320px]:w-full">
+                        <div className="pacman relative bg-transparent lg:w-[300px]"></div>
+                        <div className="dot lg:border-[15px] md:border-[15px]
+                        sm:border-[10px] min-[320px]:border-[10px] border-black rounded-[50%] lg:mt-[-200px] lg:ml-[170px] md:mt-[-200px] md:ml-[170px] sm:mt-[-100px] sm:ml-[100px] min-[320px]:mt-[-100px] min-[320px]:ml-[100px]"></div>
+                        <div className="path flex justify-around w-full pl-[-50px] text-[80px] text-[#1414f0]">
                             <PiHamburger />
                         </div>
-                        <div className="path flex justify-around w-full pl-[10px] text-[80px] text-[#1414f0]">
+                        <div className="path flex justify-around w-full pl-[-50px] text-[80px] text-[#1414f0]">
                             <LuBeef />
                         </div>
-                        <div className="path flex justify-around w-full pl-[10px] text-[80px] text-[#1414f0]">
+                        <div className="path flex justify-around w-full pl-[-50px] text-[80px] text-[#1414f0]">
                             <LuSalad />
                         </div>
-                        <div className="path flex justify-around w-full pl-[10px] text-[80px] text-[#1414f0]">
+                        <div className="path flex justify-around w-full pl-[-50px] text-[80px] text-[#1414f0]">
                             <MdOutlineFastfood />
                         </div>
-                        <div className="path flex justify-around w-full pl-[10px] text-[80px] text-[#1414f0]">
+                        <div className="path flex justify-around w-full pl-[-50px] text-[80px] text-[#1414f0]">
                             <BsCake />
                         </div>
-                        <div className="path flex justify-around w-full pl-[10px] text-[80px] text-[#1414f0]">
+                        <div className="path flex justify-around w-full pl-[-50px] text-[80px] text-[#1414f0]">
                             <LiaBreadSliceSolid />
                         </div>
-                        <div className="path flex justify-around w-full pl-[10px] text-[80px] text-[#1414f0]">
+                        <div className="path flex justify-around w-full pl-[-50px] text-[80px] text-[#1414f0]">
                             <PiHamburger />
                         </div>
                     </div>
                 )}
             </div>
             {!isVisible && (
-                <div className={`homeContainer fade-in`}>
+                <div className={`homeContainer fade-in flex w-full`}>
                     <h1 className='text-white'>hngrPac</h1>
                 </div>
             )}
