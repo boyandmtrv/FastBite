@@ -1,6 +1,6 @@
 import './styles/App.css';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import { appId, appKey } from './api/key';
@@ -47,26 +47,25 @@ function App() {
         };
     };
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
+
 
     return (
-        <div className='App bg-gray-300 w-full h-screen'>
+        <div className='App w-full h-screen'>
             <Header />
-            {/* <TimeSearch
-                query={query}
-                setQuery={setQuery}
-                onSubmit={onSubmit}
-            /> */}
-
             {loading ? (
                 <Loading />
             ) : (
                 <Routes>
                     <Route path='/search'
-                        element={<Search
-                            query={query}
-                            setQuery={setQuery}
-                            onSubmit={onSubmit}
-                        />}
+                        element={
+                            <Search
+                                query={query}
+                                setQuery={setQuery}
+                                onSubmit={onSubmit}
+                            />}
                     />
                     <Route path='/cuisineSearch'
                         element={
@@ -86,11 +85,34 @@ function App() {
                                 onSubmit={onSubmit}
                             />}
                     />
-                    <Route path='/' element={<Home />} />
-                    <Route path='/allRecipes' element={<AllRecipes recipes={recipes} />} />
-                    <Route path='/details/:recipeId' element={<Details recipes={recipes} />} />
+                    <Route path='/'
+                        element={
+                            <>
+                                <Home />
+                                {/* {location.pathname === '/' && (
+                                    <TimeSearch
+                                        query={query}
+                                        setQuery={setQuery}
+                                        onSubmit={onSubmit}
+                                    />
+                                )} */}
+                            </>
+                        }
+                    />
+                    <Route path='/allRecipes'
+                        element={<AllRecipes recipes={recipes} />}
+                    />
+                    <Route path='/details/:recipeId'
+                        element={<Details recipes={recipes} />}
+                    />
                 </Routes>
             )}
+
+            {/* <TimeSearch
+                query={query}
+                setQuery={setQuery}
+                onSubmit={onSubmit}
+            /> */}
         </div>
     );
 }
