@@ -29,7 +29,7 @@ const Header = () => {
     };
 
     return (
-        <div className="w-full fixed top-0 left-0 shadow-md z-10 bg-transparent">
+        <div className="w-full fixed top-0 left-0 shadow-md z-10 bg-[#F9F5EA]">
             {!isVisible && (
                 <div className="fade-in md:flex items-center justify-center  py-4 md:px-10 px-7 mr-[5%]">
                     <div className="font-cursive text-2xl cursor-pointer flex items-center md:hidden">
