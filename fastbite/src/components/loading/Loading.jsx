@@ -5,7 +5,7 @@ const Loading = () => {
     
     return (
         <div className='pacmanIconLoading bg-[#F9F5EA] w-full h-screen flex flex-col items-center justify-center'>
-            <span className='mt-[10%] ml-5'>
+            <span className='lg:mt-[10%] md:mt-[20%] sm:mt-[25%] min-[320px]:mt-[50%]'>
                 Checking...
             </span>
         </div>
