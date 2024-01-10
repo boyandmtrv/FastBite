@@ -153,14 +153,14 @@
 
 .pacmanIcon::before {
     animation: chunk-top .5s ease infinite;
-    border: 50px solid red;
+    border: 50px solid #E1DCC8;
     border-right-color: transparent;
     border-top-color: transparent;
 }
 
 .pacmanIcon::after {
     animation: chunk-bottom .5s ease infinite;
-    border: 50px solid red;
+    border: 50px solid #E1DCC8;
     border-left-color: transparent;
     border-bottom-color: transparent;
 }

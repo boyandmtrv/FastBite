@@ -61,10 +61,10 @@ const Home = () => {
                 )}
             </div>
             {!isVisible && (
-                <div className={`homeContainer fade-in flex flex-col justify-center items-center w-full h-screen text-[#545454]`}>
-                    <h2 className='text-5xl z-10'>Welcome to</h2>
-                    <h1 className='lg:text-9xl md:text-9xl min-[320px]:text-8xl sm:text-9xl text-[#FFB897] z-10'>hngrPac</h1>
-                    <p className='text-xl mt-[5%] z-10'>Wondering that to eat?</p>
+                <div className={`homeContainer fade-in flex flex-col justify-center items-center w-full h-screen`}>
+                    <h2 className='text-5xl z-10 text-[#545454]'>Welcome to</h2>
+                    <h1 className='lg:text-9xl md:text-9xl min-[320px]:text-7xl sm:text-9xl text-[#FFB897] z-10'>hngrPac</h1>
+                    <p className='text-2xl mt-[5%] lg:text-[#545454] sm:text-[#000] min-[320px]:text-[#000] md:text-[#545454] z-10'>Wondering that to eat?</p>
                     <Link className='text-[#000] border rounded-xl bg-[#FFB897] hover:text-[#000] hover:bg-[#f7d7c9] py-2 px-2 duration-500 lg:mt-7 md:mt-[8%] sm:mt-[13%] min-[320px]:mt-[10%] z-10' to="/timeSearch">Perform Fast Search</Link>
                     <div className='pacmanIcon fixed bg-transparent lg:w-[100px] lg:bottom-[21%] lg:left-[47.5%]  md:bottom-[20%] md:left-[46%] sm:bottom-[20%] sm:left-[43%] min-[320px]:bottom-[24%] min-[320px]:left-[39%]'></div>
 
