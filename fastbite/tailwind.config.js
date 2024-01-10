@@ -6,7 +6,7 @@ export default {
   ],
   theme: {
     backgroundImage: theme => ({
-      'pacBg': "url(../img/pacbg.png)",
+      'pacBg': "url(../img/pacbg2.png)",
     }),
     fontFamily: {
       'cursive': ['Merienda', 'cursive']
