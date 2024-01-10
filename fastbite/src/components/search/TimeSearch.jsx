@@ -24,39 +24,41 @@ const TimeSearch = ({
     return (
         <div className="search">
             <div className="bg-pacBg ">
-                <form className="searchForm backdrop-blur-md flex w-full h-screen flex-row items-center justify-center" onSubmit={handleSearch}>
+                <form className="searchForm backdrop-blur-md flex w-full h-screen lg:flex-row md:flex-row sm:flex-col min-[320px]: flex-col items-center justify-center" onSubmit={handleSearch}>
                     {!isVisible && (
-                        <>
+                        <div className="flex flex-col items-center justify-center">
                             <input
                                 type="text"
-                                className=" w-[40%] h-16 pl-5 border border-black rounded-3xl text-2xl"
-                                placeholder='Enter food'
+                                className=" w-full h-16 pl-5 border border-none bg-[#f7d7c9] text-[#545454] rounded-3xl lg:text-xl md:text-xl sm:text-xl min-[320px]:text-md"
+                                placeholder='What do you have in the fridge?'
                                 value={query}
                                 onChange={(e) => setQuery(e.target.value)}
                             />
                             <button
                                 type="submit"
-                                className=" bg-slate-500 ml-5 w-36 h-16 border rounded-3xl"
+                                className=" bg-[#C0DDC1] hover:bg-[#c1f3c3]  hover:text-[#545454] duration-500 lg:m-5 md:m-5 sm:mt-5 min-[320px]:mt-5 w-36 h-16 border rounded-3xl"
                                 onClick={handleNext}>
                                 Next
                             </button>
-                        </>
+                            <p className="text-xl lg:text-black md:text-black sm:text-black min-[320px]:text-white text-center mt-5">Please, add one or more products and separate them with ','.</p>
+                        </div>
                     )}
                     {isVisible && (
-                        <>
+                        <div className="flex flex-col items-center justify-center">
                             <input
                                 type="number"
-                                className=" w-[40%] h-16 pl-5 border border-black rounded-3xl text-2xl"
-                                placeholder='Time you have'
+                                className="w-full h-16 pl-5 border border-none bg-[#f7d7c9] text-[#545454] rounded-3xl lg:text-xl md:text-xl sm:text-xl min-[320px]:text-md [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                                placeholder='How many minutes do you have?'
                                 value={maxTime}
                                 onChange={(e) => setMaxTime(e.target.value)}
                             />
                             <input
                                 type="submit"
-                                className=" bg-slate-500 ml-5 w-36 h-16 border rounded-3xl"
+                                className=" bg-[#C0DDC1] hover:bg-[#c1f3c3]  hover:text-[#545454] duration-500 lg:m-5 md:m-5 sm:mt-5 min-[320px]:mt-5 w-36 h-16 border rounded-3xl"
                                 value="Search"
                             />
-                        </>
+                            <p className="text-xl text-center mt-5">Please type the minutes in number type.</p>
+                        </div>
                     )}
                 </form>
             </div>
