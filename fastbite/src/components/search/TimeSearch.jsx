@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const TimeSearch = ({
     query,
     setQuery,
@@ -9,16 +12,35 @@ const TimeSearch = ({
     const [maxTime, setMaxTime] = useState('');
     const [isVisible, setIsVisible] = useState(false);
 
-
     const handleSearch = (e) => {
         e.preventDefault();
-        onSubmit(query, maxTime);
-        setQuery('');
-        setMaxTime('');
+
+        try {
+            if (isVisible && maxTime === '') {
+                toast.error('Please enter a time frame!')
+                return;
+            } else {
+                onSubmit(query, maxTime);
+                setQuery('');
+                setMaxTime('');
+            }
+        } catch (err) {
+            console.log(err);
+        }
     };
 
-    const handleNext = () => {
-        setIsVisible(true);
+    const handleNext = (e) => {
+        e.preventDefault()
+        try {
+            if (!isVisible && query === '') {
+                toast.error('Please enter one or more products')
+                return;
+            } else {
+                setIsVisible(true);
+            }
+        } catch (err) {
+            console.log(err);
+        }
     };
 
     return (
@@ -62,6 +84,18 @@ const TimeSearch = ({
                     )}
                 </form>
             </div>
+            <ToastContainer
+                position="bottom-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
         </div>
     );
 };
