@@ -14,6 +14,8 @@ import Loading from './components/loading/Loading';
 import CuisineSearch from './components/search/CuisineSearch';
 import Search from './components/search/Search';
 import Header from './components/header/Header';
+import About from './components/about/About';
+import NotFound from './components/404/NotFound';
 
 function App() {
     const [query, setQuery] = useState('');
@@ -46,11 +48,6 @@ function App() {
             setLoading(false);
         };
     };
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [location.pathname]);
-
 
     return (
         <div className='App w-full h-screen'>
@@ -86,18 +83,7 @@ function App() {
                             />}
                     />
                     <Route path='/'
-                        element={
-                            <>
-                                <Home />
-                                {/* {location.pathname === '/' && (
-                                    <TimeSearch
-                                        query={query}
-                                        setQuery={setQuery}
-                                        onSubmit={onSubmit}
-                                    />
-                                )} */}
-                            </>
-                        }
+                        element={<Home />}
                     />
                     <Route path='/allRecipes'
                         element={<AllRecipes recipes={recipes} />}
@@ -105,14 +91,13 @@ function App() {
                     <Route path='/details/:recipeId'
                         element={<Details recipes={recipes} />}
                     />
+                    <Route path='/about'
+                        element={<About />}
+                    />
+                    <Route path='*' element={<NotFound />} />
+
                 </Routes>
             )}
-
-            {/* <TimeSearch
-                query={query}
-                setQuery={setQuery}
-                onSubmit={onSubmit}
-            /> */}
         </div>
     );
 }
