@@ -24,7 +24,6 @@ export const getRecipes = async (query, appId, appKey, setRecipes, maxTotalTime,
 
         setRecipes(filteredRecipes);
 
-        console.log(result.data);
     } catch (error) {
         console.error('Error fetching recipes:', error);
     }
