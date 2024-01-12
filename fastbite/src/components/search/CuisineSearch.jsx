@@ -1,5 +1,9 @@
 import { useState } from "react";
-import cuisineTypes from "../../../cuisineTypes";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import CuisineType from "../../cuisineTypes/CuisineType";
 
 const CuisineSearch = ({
     query,
@@ -14,9 +18,20 @@ const CuisineSearch = ({
 
     const handleSearch = (e) => {
         e.preventDefault();
-        onSubmit(query, cuisineType.toLowerCase()); 
-        setQuery('');
-        setCuisineType('');
+
+        try {
+            if (isVisible && cuisineType === '') {
+                toast.error('Please enter a cuisine type')
+                return;
+            } else {
+                onSubmit(query, cuisineType.toLowerCase()); 
+                setQuery('');
+                setCuisineType('');
+            }
+        } catch (err) {
+            console.log(err);
+        }
+
     };
 
     const handleNext = () => {
@@ -26,6 +41,11 @@ const CuisineSearch = ({
     const handleToggleAllCuisines = () => {
         setShowAllCuisines(!showAllCuisines);
     };
+
+    const closeModal = () => {
+        setShowAllCuisines(false);
+      };
+    
 
 
     return (
@@ -65,22 +85,31 @@ const CuisineSearch = ({
                                 className="bg-[#C0DDC1] hover:bg-[#c1f3c3]  hover:text-[#545454] duration-500 lg:m-5 md:m-5 sm:mt-5 min-[320px]:mt-5 w-36 h-16 border rounded-3xl"
                                 value="Search"
                             />
-                            <div className="text-xl lg:text-black md:text-black sm:text-black min-[320px]:text-black text-center mt-5">
-                                <div className="cursor-pointer" onClick={handleToggleAllCuisines} >
-                                    Click this field in order for all Cuisine types to appear
+                            <div className="text-xl lg:text-black md:text-black sm:text-black min-[320px]:text-white text-center mt-5">
+                               To see the full list of cuisine types, please click
+                                <div className="cursor-pointer mt-5 text-4xl text-[#f7b99f]" onClick={handleToggleAllCuisines} >
+                                    Here
                                 </div>
                                 {showAllCuisines && (
-                                    <div className="lg:text-xl lg:text-black md:text-md md:text-black sm:text-sm sm:text-white min-[320px]:text-sm min-[320px]:text-white">
-                                        {cuisineTypes.map((cuisine, index) => (
-                                            <li key={index}>{cuisine}</li>
-                                        ))}
-                                    </div>
+                                    <CuisineType onClose={closeModal} />
                                 )}
                             </div>
                         </div>
                     )}
                 </form>
             </div>
+            <ToastContainer
+                position="bottom-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
         </div>
     );
 };
