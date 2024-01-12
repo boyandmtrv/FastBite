@@ -4,10 +4,12 @@ const Details = ({ recipes }) => {
     const { recipeId } = useParams();
 
     const recipe = recipes.find((r) => r.recipe.label === recipeId);
-    console.log(recipe);
 
     if (!recipe) {
-        return <p>Recipe not found</p>;
+        return <div className='text-5xl w-full h-screen flex flex-col bg-[#F9F5EA] text-center justify-center items-center'>Recipe not found. 
+        <span className='mt-5'>
+        <Link className='mt-5 border text-white bg-[#FFB897] hover:text-[#000] hover:bg-[#f7d7c9] duration-500 rounded-full w-56 h-12 items-center justify-center flex text-xl' to='/search'>Perform a search.</Link>        </span>
+        </div>
     }
 
     const product = recipe.recipe;
