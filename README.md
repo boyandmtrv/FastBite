@@ -8,7 +8,7 @@
   <p align="center">
     Satisfy Cravings Anytime
     <br />
-    <a href="https://github.com/boyandmtrv/Huddle"><strong>Discover the docs</strong></a>
+    <a href="https://github.com/boyandmtrv/hngrPac"><strong>Discover the docs</strong></a>
   </p>
 </div>
 
