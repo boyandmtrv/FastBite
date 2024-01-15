@@ -1,7 +1,7 @@
 <div id="readme-top"></div>
 
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/boyandmtrv/hngrPac">
     <img src="fastbite/src/img/hngrPacLogo.png" alt="Logo" width="120" height="120">
   </a>
 
